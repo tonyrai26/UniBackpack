@@ -34,5 +34,14 @@ package() {
 	DESTDIR="$pkgdir" cmake --install build
 
     #Installing desktop file
-    install -Dm644 unibackpack.desktop "$pkgdir/usr/share/applications/unibackpack.desktop"
+    install -Dm644 unibackpack.desktop "$pkgdir/usr/share/applications/unibackpack.desktop" << 'EOF'
+[Desktop Entry]
+Name=UniBackpack
+Comment=A Qt6 downloader for software used by Greek universities
+Exec=UniBackpack
+Icon=unibackpack
+Terminal=false
+Type=Application
+Categories=Utility;
+EOF
 }
